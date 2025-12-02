@@ -1,0 +1,84 @@
+:root{
+  --bg: #fafafa;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --accent: #5b43ff;
+  --accent-2: #7b61ff;
+  --border: #e6e9ef;
+  --text: #222;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial;color:var(--text);background:linear-gradient(180deg,#fafafa,#f2f4f8);}
+
+.wrap{
+  max-width:520px;
+  margin:48px auto;
+  padding:18px;
+  text-align:center;
+}
+
+h1{
+  font-size:34px;
+  margin:8px 0 22px;
+  font-weight:700;
+  color:#333;
+}
+
+/* card / form */
+.card{
+  background:var(--panel);
+  border-radius:12px;
+  padding:28px 26px;
+  box-shadow:0 10px 30px rgba(20,28,40,0.06);
+  border:1px solid var(--border);
+  text-align:left;
+}
+
+.field{display:block;margin-bottom:18px}
+.label-text{display:block;font-weight:600;margin-bottom:10px;color:#333}
+
+/* form controls */
+input[type="file"]{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:#fff;
+}
+
+select, input[type="text"], input[type="number"]{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-size:14px;
+  color:var(--text);
+}
+
+.btn{
+  display:block;
+  width:100%;
+  margin-top:6px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:0;
+  font-weight:700;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:white;
+  cursor:pointer;
+  box-shadow:0 8px 18px rgba(91,67,255,0.18);
+}
+
+.btn:active{transform:translateY(1px)}
+
+.note{margin-top:16px;color:var(--muted);font-size:14px;text-align:center}
+.small{margin-top:10px;color:var(--muted);font-size:13px;text-align:center}
+
+/* responsive */
+@media (max-width:520px){
+  .wrap{margin:20px;padding:8px}
+  .card{padding:18px}
+  h1{font-size:26px}
+}

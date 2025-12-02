@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adversarial Image Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Adversarial Image Generator</h1>
+
+    <form class="card" method="post" enctype="multipart/form-data" action="/generate">
+      <label class="field">
+        <span class="label-text">Image</span>
+        <input type="file" name="image" accept="image/*" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Attack</span>
+        <select name="attack" aria-label="attack">
+          <option value="fgsm">FGSM (single-step)</option>
+          <option value="ifgsm">I-FGSM (iterative)</option>
+          <option value="pgd">PGD (iterative + random)</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Epsilon (max perturbation, recommended 0.01–0.3)</span>
+        <input type="text" name="epsilon" value="0.05" placeholder="0.05">
+      </label>
+
+      <label class="field">
+        <span class="label-text">Iterations (used by BIM &amp; PGD)</span>
+        <input type="number" name="iterations" value="10" min="1" step="1">
+      </label>
+
+      <label class="field">
+        <span class="label-text">Alpha (step size per iteration)</span>
+        <input type="text" name="alpha" placeholder="e.g. 0.01">
+      </label>
+
+      <button class="btn" type="submit">Generate adversarial</button>
+
+      <p class="note">
+        The generated image will be downloaded as a PNG file. Model: MobileNetV2 (ImageNet).
+      </p>
+
+      <p class="small">
+        FGSM: fast single-step. I-FGSM: iterative FGSM (no random start). PGD: iterative with random start (stronger).
+      </p>
+    </form>
+  </main>
+</body>
+</html>

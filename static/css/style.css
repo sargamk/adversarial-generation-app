@@ -62,7 +62,7 @@ select, input[type="text"], input[type="number"]{
   width:100%;
   margin-top:6px;
   padding:12px 14px;
-  border-radius:14px;
+  border-radius:16px;
   border:0;
   font-weight:700;
   background:linear-gradient(90deg,var(--accent),var(--accent-2));
